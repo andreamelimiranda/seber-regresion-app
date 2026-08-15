@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seber & Lee | App de Análisis de Regresión</title>
+  <meta name="description" content="Aplicación didáctica para aprender el capítulo 1 de Seber & Lee: vectores de variables aleatorias, esperanza, covarianza y formas cuadráticas.">
+  <script>
+    window.MathJax = {tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]]},svg:{fontCache:"global"}};
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    :root{--bg:#07111f;--panel:#0f1b2d;--panel2:#14243a;--ink:#f4f7fb;--muted:#b8c6d8;--brand:#65d6ad;--brand2:#73a7ff;--warn:#ffd166;--bad:#ff7b7b;--line:#253a59;--shadow:0 18px 50px rgba(0,0,0,.30);--radius:22px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top left,#18335c 0,#07111f 38%,#050915 100%);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58}.app{display:grid;grid-template-columns:295px 1fr;min-height:100vh}.side{position:sticky;top:0;height:100vh;padding:23px;background:rgba(8,18,32,.94);border-right:1px solid var(--line);backdrop-filter:blur(14px);overflow:auto}.brand{display:flex;gap:12px;align-items:center;margin-bottom:20px}.logo{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#06111f;font-size:24px;font-weight:900}.brand h1{font-size:18px;margin:0}.brand p{font-size:13px;color:var(--muted);margin:0}.progress{padding:14px;border:1px solid var(--line);background:var(--panel);border-radius:16px;margin-bottom:18px}.bar{height:9px;background:#0a1220;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--brand2));transition:.25s}.nav a{display:block;color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:12px;margin:3px 0;font-size:14px}.nav a:hover,.nav a.active{background:var(--panel2);color:#fff}.main{padding:32px;max-width:1180px;width:100%;margin:0 auto}.hero{position:relative;padding:42px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(101,214,173,.18),rgba(115,167,255,.14)),var(--panel);box-shadow:var(--shadow);border:1px solid var(--line);overflow:hidden}.hero:after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:rgba(101,214,173,.12)}.pill{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:99px;background:rgba(101,214,173,.13);border:1px solid rgba(101,214,173,.35);color:#d8fff2;font-size:13px;font-weight:800}.hero h2{font-size:clamp(31px,5vw,58px);line-height:1.03;margin:18px 0 12px}.hero p{font-size:18px;color:var(--muted);max-width:850px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn,button{border:0;border-radius:14px;padding:12px 16px;font-weight:850;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}.btn{background:var(--brand);color:#06111f}.btn.secondary{background:#1c3150;color:#fff;border:1px solid var(--line)}button{background:#203653;color:#fff}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:22px}.card{grid-column:span 12;background:rgba(15,27,45,.94);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}.half{grid-column:span 6}.third{grid-column:span 4}.two{grid-column:span 8}h3{font-size:30px;margin:0 0 12px}h4{font-size:21px;margin:20px 0 8px}.muted{color:var(--muted)}.formula{padding:18px;border-radius:18px;background:#07111f;border:1px solid #274064;overflow:auto;margin:14px 0}.tag{display:inline-block;background:#1a2e4a;color:#cfe0ff;border:1px solid #2f4d74;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:850;margin:4px 4px 4px 0}.step{border-left:4px solid var(--brand);padding:12px 14px;background:rgba(101,214,173,.08);border-radius:0 14px 14px 0;margin:10px 0}.warn{border-left-color:var(--warn);background:rgba(255,209,102,.08)}.bad{border-left-color:var(--bad);background:rgba(255,123,123,.08)}details{border:1px solid var(--line);border-radius:16px;padding:13px 16px;background:#0b1728;margin:10px 0}summary{cursor:pointer;font-weight:900}.flash{min-height:190px;display:grid;place-items:center;text-align:center;padding:24px;background:linear-gradient(135deg,#122746,#0d182a);border:1px solid var(--line);border-radius:20px}.flash strong{font-size:25px}.quizOpt{display:block;width:100%;text-align:left;margin:8px 0;background:#11233a;border:1px solid var(--line);color:#fff}.quizOpt.ok{border-color:var(--brand);background:rgba(101,214,173,.18)}.quizOpt.no{border-color:var(--bad);background:rgba(255,123,123,.16)}input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#07111f;color:#fff}.calcRow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.result{padding:14px;border-radius:14px;background:#07111f;border:1px dashed #42638e;margin-top:12px;color:#d8fff2}.miniTable{width:100%;border-collapse:collapse;overflow:hidden;border-radius:14px}.miniTable td,.miniTable th{border:1px solid var(--line);padding:10px;text-align:left}.miniTable th{background:#10233b}.footer{color:var(--muted);font-size:13px;margin:28px 0}.hamb{display:none;position:fixed;right:18px;bottom:18px;z-index:20;background:var(--brand);color:#07111f}.small{font-size:13px}@media(max-width:900px){.app{grid-template-columns:1fr}.side{position:fixed;z-index:10;transform:translateX(-105%);transition:.25s;width:295px}.side.open{transform:none}.main{padding:18px}.half,.third,.two{grid-column:span 12}.hamb{display:block}.calcRow{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side">
+    <div class="brand"><div class="logo">Σ</div><div><h1>Seber Regresión</h1><p>Capítulo 1 · base matemática</p></div></div>
+    <div class="progress"><b>Progreso</b><p class="muted" id="progressText">0 secciones vistas</p><div class="bar"><span id="progressBar"></span></div></div>
+    <nav class="nav" id="nav">
+      <a href="#inicio">Inicio</a><a href="#mapa">Mapa</a><a href="#def">Definiciones</a><a href="#t11">T1. Esperanza matricial</a><a href="#t12">T2. Covarianza</a><a href="#t13">T3. Transformaciones</a><a href="#t14">T4. Varianza positiva</a><a href="#t15">T5. Forma cuadrática</a><a href="#t16">T6. Varianza forma cuadrática</a><a href="#flashcards">Flashcards</a><a href="#quiz">Quiz</a><a href="#calculadora">Calculadora</a>
+    </nav>
+  </aside>
+  <main class="main">
+    <button class="hamb" id="hamb">☰ Menú</button>
+    <section class="hero sec" id="inicio">
+      <span class="pill">App ligera: sin PDFs ni archivos pesados</span>
+      <h2>Análisis de Regresión de Seber, explicado paso a paso</h2>
+      <p>Esta app enseña el Capítulo 1: vectores de variables aleatorias, esperanza, covarianza, matrices de varianza y formas cuadráticas. Está hecha para estudiar con ejemplos, demostraciones guiadas y práctica.</p>
+      <div class="actions"><a class="btn" href="#t11">Empezar teoremas</a><a class="btn secondary" href="#quiz">Practicar con quiz</a></div>
+    </section>
+
+    <section class="grid sec" id="mapa">
+      <div class="card"><h3>Mapa mental del capítulo</h3><p class="muted">El capítulo prepara la notación que después se usa en regresión lineal matricial.</p>
+        <div class="grid">
+          <div class="card third"><h4>1. Vectores aleatorios</h4><p>Pasamos de variables individuales a vectores: $\mathbf X=(X_1,\ldots,X_n)'$.</p></div>
+          <div class="card third"><h4>2. Esperanza</h4><p>La esperanza de una matriz o vector se calcula entrada por entrada.</p></div>
+          <div class="card third"><h4>3. Covarianza</h4><p>La covarianza se vuelve una matriz con todas las covarianzas cruzadas.</p></div>
+          <div class="card third"><h4>4. Transformaciones</h4><p>Si multiplicas por matrices constantes, la esperanza y varianza se transforman ordenadamente.</p></div>
+          <div class="card third"><h4>5. Formas cuadráticas</h4><p>Expresiones como $\mathbf X' A \mathbf X$ serán esenciales para sumas de cuadrados y pruebas.</p></div>
+          <div class="card third"><h4>6. Regresión</h4><p>Luego aparecerá $Y=X\beta+\varepsilon$, y estas reglas serán la base de casi todo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid sec" id="def">
+      <div class="card"><h3>Definiciones base</h3>
+        <span class="tag">Vector aleatorio</span><span class="tag">Esperanza</span><span class="tag">Covarianza</span><span class="tag">Matriz de varianza</span>
+        <h4>Vector aleatorio</h4><p>Un vector aleatorio es un vector cuyas componentes son variables aleatorias. Antes de observar los datos, sus valores pueden cambiar de una muestra a otra.</p>
+        <div class="formula">$$\mathbf X=\begin{pmatrix}X_1\\X_2\\\vdots\\X_n\end{pmatrix}$$</div>
+        <h4>Esperanza de una matriz aleatoria</h4><p>Si $\mathbf Z=(Z_{ij})$, entonces:</p><div class="formula">$$E[\mathbf Z]=(E[Z_{ij}])$$</div>
+        <h4>Covarianza entre vectores</h4><p>Si $\mathbf X$ tiene $m$ componentes y $\mathbf Y$ tiene $n$ componentes:</p><div class="formula">$$\operatorname{Cov}(\mathbf X,\mathbf Y)=(\operatorname{cov}(X_i,Y_j))$$</div>
+        <div class="step warn"><b>Regla para recordar:</b> si algo es constante, la esperanza no lo promedia; si algo es aleatorio, sí.</div>
+      </div>
+    </section>
+
+    <section class="grid sec" id="t11"><div class="card"><h3>Teorema 1: esperanza del sándwich matricial</h3>
+      <p>Si $A$, $B$ y $C$ son matrices constantes, entonces:</p><div class="formula">$$E[A Z B+C]=A E[Z]B+C$$</div>
+      <div class="step"><b>Idea clave:</b> la esperanza no toca constantes; solo promedia lo aleatorio.</div>
+      <h4>Demostración paso a paso</h4>
+      <div class="step"><b>Paso 1.</b> Define $W=AZB+C$.</div><div class="step"><b>Paso 2.</b> Mira la entrada $(i,j)$: $$W_{ij}=\sum_r\sum_s a_{ir}Z_{rs}b_{sj}+c_{ij}.$$</div><div class="step"><b>Paso 3.</b> Aplica esperanza: $$E[W_{ij}]=\sum_r\sum_s a_{ir}E[Z_{rs}]b_{sj}+c_{ij}.$$</div><div class="step"><b>Paso 4.</b> Esa entrada es exactamente la entrada $(i,j)$ de $AE[Z]B+C$.</div>
+      <details><summary>Analogía para memorizar</summary><p>$A$ y $B$ son el pan del sándwich. $Z$ es el relleno aleatorio. $C$ es la salsa. La esperanza cambia el relleno por su promedio, pero deja el pan y la salsa igual.</p></details>
+    </div></section>
+
+    <section class="grid sec" id="t12"><div class="card"><h3>Teorema 2: covarianza como producto de desviaciones</h3>
+      <p>Si $E[X]=\alpha$ y $E[Y]=\beta$, entonces:</p><div class="formula">$$\operatorname{Cov}(X,Y)=E[(X-\alpha)(Y-\beta)']$$</div>
+      <div class="step"><b>Idea clave:</b> covarianza = promedio de productos de desviaciones.</div>
+      <h4>Demostración paso a paso</h4>
+      <div class="step"><b>Paso 1.</b> Por definición, $\operatorname{Cov}(X,Y)=(\operatorname{cov}(X_i,Y_j))$.</div>
+      <div class="step"><b>Paso 2.</b> Cada entrada cumple: $$\operatorname{cov}(X_i,Y_j)=E[(X_i-\alpha_i)(Y_j-\beta_j)].$$</div>
+      <div class="step"><b>Paso 3.</b> El producto $(X-\alpha)(Y-\beta)'$ produce una matriz con todas esas entradas.</div>
+      <div class="step"><b>Paso 4.</b> Al aplicar esperanza entrada por entrada, aparece la matriz de covarianzas.</div>
+      <details><summary>Ejemplo 2x2</summary><div class="formula">$$E[(X-\alpha)(Y-\beta)']=\begin{pmatrix}\operatorname{cov}(X_1,Y_1)&\operatorname{cov}(X_1,Y_2)\\\operatorname{cov}(X_2,Y_1)&\operatorname{cov}(X_2,Y_2)\end{pmatrix}$$</div></details>
+    </div></section>
+
+    <section class="grid sec" id="t13"><div class="card"><h3>Teorema 3: covarianza bajo transformaciones lineales</h3>
+      <p>Si $A$ y $B$ son matrices constantes:</p><div class="formula">$$\operatorname{Cov}(AX,BY)=A\operatorname{Cov}(X,Y)B'$$</div>
+      <h4>Lectura</h4><p>Cuando transformas $X$ e $Y$ linealmente, la matriz de covarianza se transforma con esas mismas matrices constantes.</p>
+      <h4>Demostración paso a paso</h4>
+      <div class="step"><b>Paso 1.</b> Define $U=AX$ y $V=BY$.</div>
+      <div class="step"><b>Paso 2.</b> Usa el teorema anterior: $$\operatorname{Cov}(U,V)=E[(U-E[U])(V-E[V])'].$$</div>
+      <div class="step"><b>Paso 3.</b> Como $E[AX]=AE[X]=A\alpha$ y $E[BY]=B\beta$, queda: $U-E[U]=A(X-\alpha)$ y $V-E[V]=B(Y-\beta)$.</div>
+      <div class="step"><b>Paso 4.</b> Sustituye: $$E[A(X-\alpha)(Y-\beta)'B'].$$</div>
+      <div class="step"><b>Paso 5.</b> Como $A$ y $B'$ son constantes, salen: $$A E[(X-\alpha)(Y-\beta)']B'=A\operatorname{Cov}(X,Y)B'.$$</div>
+      <div class="formula">Caso especial: $$\operatorname{Var}(AX)=A\operatorname{Var}(X)A'$$</div>
+    </div></section>
+
+    <section class="grid sec" id="t14"><div class="card"><h3>Teorema 4: cuándo la matriz de varianza es positiva definida</h3>
+      <p>Si ningún elemento de $X$ es combinación lineal de los demás, entonces $\operatorname{Var}(X)$ es positiva definida.</p>
+      <div class="formula">$$c'\operatorname{Var}(X)c=\operatorname{var}(c'X)$$</div>
+      <h4>Demostración paso a paso</h4>
+      <div class="step"><b>Paso 1.</b> Toma cualquier vector constante $c$.</div>
+      <div class="step"><b>Paso 2.</b> La cantidad $c'X$ es una variable aleatoria que mezcla linealmente los componentes de $X$.</div>
+      <div class="step"><b>Paso 3.</b> Por la regla de varianza: $$\operatorname{var}(c'X)=c'\operatorname{Var}(X)c.$$</div>
+      <div class="step"><b>Paso 4.</b> Una varianza no puede ser negativa.</div>
+      <div class="step"><b>Paso 5.</b> Si fuera cero con $c\neq0$, entonces $c'X$ sería constante. Eso implicaría una relación lineal exacta entre componentes de $X$, justo lo que se descartó.</div>
+      <div class="step"><b>Conclusión:</b> para todo $c\neq0$, $c'\operatorname{Var}(X)c>0$, por lo tanto la matriz es positiva definida.</div>
+    </div></section>
+
+    <section class="grid sec" id="t15"><div class="card"><h3>Teorema 5: esperanza de una forma cuadrática</h3>
+      <p>Sea $X$ un vector aleatorio, $A$ una matriz simétrica, $E[X]=\mu$ y $\operatorname{Var}(X)=\Sigma$. Entonces:</p>
+      <div class="formula">$$E[X'AX]=\operatorname{tr}(A\Sigma)+\mu'A\mu$$</div>
+      <h4>Interpretación</h4><p>Una forma cuadrática mide una suma ponderada de cuadrados y productos cruzados. En regresión aparecen constantemente en sumas de cuadrados.</p>
+      <h4>Demostración paso a paso</h4>
+      <div class="step"><b>Paso 1.</b> Como $X'AX$ es un escalar, se puede escribir como su traza: $$X'AX=\operatorname{tr}(X'AX).$$</div>
+      <div class="step"><b>Paso 2.</b> Usa propiedad de la traza: $$\operatorname{tr}(X'AX)=\operatorname{tr}(AXX').$$</div>
+      <div class="step"><b>Paso 3.</b> Aplica esperanza: $$E[X'AX]=\operatorname{tr}(A E[XX']).$$</div>
+      <div class="step"><b>Paso 4.</b> Usa la identidad: $$\operatorname{Var}(X)=E[XX']-\mu\mu'$$ por lo tanto $$E[XX']=\Sigma+\mu\mu'.$$</div>
+      <div class="step"><b>Paso 5.</b> Sustituye: $$\operatorname{tr}(A(\Sigma+\mu\mu'))=\operatorname{tr}(A\Sigma)+\operatorname{tr}(A\mu\mu').$$</div>
+      <div class="step"><b>Paso 6.</b> Como $\operatorname{tr}(A\mu\mu')=\mu'A\mu$, queda la fórmula final.</div>
+    </div></section>
+
+    <section class="grid sec" id="t16"><div class="card"><h3>Teorema 6: varianza de una forma cuadrática</h3>
+      <p>Este resultado es más técnico. Sirve para calcular la variabilidad de $X'AX$ cuando las variables son independientes y tienen momentos comunes.</p>
+      <div class="formula">$$\operatorname{var}(X'AX)=E[(X'AX)^2]-\{E[X'AX]\}^2$$</div>
+      <h4>Idea de la demostración</h4>
+      <div class="step"><b>Paso 1.</b> Centra el vector: escribe $Y=X-\theta$. Así separas media y variabilidad.</div>
+      <div class="step"><b>Paso 2.</b> Expande: $$X'AX=(X-\theta)'A(X-\theta)+2\theta'A(X-\theta)+\theta'A\theta.$$</div>
+      <div class="step"><b>Paso 3.</b> Eleva al cuadrado y calcula esperanza término a término.</div>
+      <div class="step"><b>Paso 4.</b> Usa independencia: muchos productos tienen esperanza cero; sobreviven los términos con momentos de orden 2, 3 y 4.</div>
+      <div class="step"><b>Paso 5.</b> Agrupa con trazas y diagonales de $A$.</div>
+      <div class="formula">Resultado general: $$\operatorname{var}(X'AX)=(\mu_4-3\mu_2^2)a'a+2\mu_2^2\operatorname{tr}(A^2)+4\mu_2\theta'A^2\theta+4\mu_3\theta'Aa$$</div>
+      <p class="muted small">Aquí $a$ es el vector de elementos diagonales de $A$. La fórmula completa es avanzada; lo importante es reconocer que usa momentos centrales de orden 2, 3 y 4.</p>
+    </div></section>
+
+    <section class="grid sec" id="flashcards">
+      <div class="card half"><h3>Flashcards</h3><p class="muted">Presiona para cambiar tarjeta.</p><div class="flash" id="flash"><strong>La esperanza solo transforma lo aleatorio.</strong></div><button id="nextFlash">Siguiente tarjeta</button></div>
+      <div class="card half"><h3>Frases para memorizar</h3>
+        <p><span class="tag">Esperanza</span> No toca constantes.</p><p><span class="tag">Covarianza</span> Promedio de productos de desviaciones.</p><p><span class="tag">Varianza</span> Covarianza de una variable consigo misma.</p><p><span class="tag">Forma cuadrática</span> Escalar construido como $X'AX$.</p>
+      </div>
+    </section>
+
+    <section class="grid sec" id="quiz"><div class="card"><h3>Quiz rápido</h3><p class="muted">Elige una respuesta. Te diré altiro si está bien.</p><div id="quizBox"></div><button id="newQuiz">Otra pregunta</button></div></section>
+
+    <section class="grid sec" id="calculadora">
+      <div class="card"><h3>Calculadora didáctica: $E[aX+bY+c]$</h3><p>Usa la linealidad de la esperanza:</p><div class="formula">$$E[aX+bY+c]=aE[X]+bE[Y]+c$$</div>
+        <div class="calcRow"><label>a<input id="a" type="number" value="2"></label><label>E[X]<input id="ex" type="number" value="5"></label><label>b<input id="b" type="number" value="3"></label><label>E[Y]<input id="ey" type="number" value="4"></label><label>c<input id="c" type="number" value="7"></label></div>
+        <button id="calc">Calcular</button><div class="result" id="calcResult">Resultado: 2·5 + 3·4 + 7 = 29</div>
+      </div>
+    </section>
+
+    <p class="footer">App creada para estudiar análisis de regresión. No contiene PDFs ni copias del libro; solo explicación didáctica, fórmulas y ejercicios interactivos.</p>
+  </main>
+</div>
+<script>
+const sections=[...document.querySelectorAll('.sec')];const links=[...document.querySelectorAll('.nav a')];const seen=new Set();function update(){let current='';sections.forEach(s=>{const r=s.getBoundingClientRect();if(r.top<innerHeight*.45&&r.bottom>100){current=s.id;seen.add(s.id)}});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));document.getElementById('progressText').textContent=seen.size+' secciones vistas';document.getElementById('progressBar').style.width=Math.round(seen.size/sections.length*100)+'%'}addEventListener('scroll',update);update();document.getElementById('hamb').onclick=()=>document.getElementById('side').classList.toggle('open');links.forEach(a=>a.onclick=()=>document.getElementById('side').classList.remove('open'));
+const flashcards=['La esperanza no toca constantes; solo promedia lo aleatorio.','Covarianza = promedio de productos de desviaciones.','Var(X)=Cov(X,X).','Si E[X]=μ, entonces Var(X)=E[XX’]-μμ’.','Cov(AX,BY)=A Cov(X,Y) B’.','Var(AX)=A Var(X) A’.','E[X’AX]=tr(AΣ)+μ’Aμ.','Una forma cuadrática siempre devuelve un escalar.'];let f=0;document.getElementById('nextFlash').onclick=()=>{f=(f+1)%flashcards.length;document.getElementById('flash').innerHTML='<strong>'+flashcards[f]+'</strong>';};
+const qs=[{q:'¿Qué parte cambia la esperanza en E[AZB+C]?',o:['A y B','Solo Z','Solo C'],a:1,e:'A, B y C son constantes; Z es la parte aleatoria.'},{q:'¿Qué significa Cov(X,Y)?',o:['Una matriz de covarianzas cruzadas','Una suma de X','Una media de Y'],a:0,e:'Cada entrada es cov(X_i,Y_j).'},{q:'¿Cuál es la fórmula de Var(AX)?',o:['A Var(X) A’','A+Var(X)','Var(X)A'],a:0,e:'Es el caso especial de Cov(AX,AX).'},{q:'¿Qué representa X−μ?',o:['Desviación respecto al promedio','Una constante','Una matriz identidad'],a:0,e:'Es cuánto se aleja X de su media.'},{q:'¿Qué es X’AX?',o:['Una forma cuadrática','Un vector aleatorio','Una matriz identidad'],a:0,e:'Columna transpuesta por matriz por columna da un escalar.'}];function renderQuiz(){const item=qs[Math.floor(Math.random()*qs.length)];const box=document.getElementById('quizBox');box.innerHTML='<h4>'+item.q+'</h4>'+item.o.map((x,i)=>'<button class="quizOpt" data-i="'+i+'">'+x+'</button>').join('')+'<div class="result" id="qres">Selecciona una opción.</div>';box.querySelectorAll('.quizOpt').forEach(b=>b.onclick=()=>{const ok=+b.dataset.i===item.a;box.querySelectorAll('.quizOpt').forEach(x=>x.disabled=true);b.classList.add(ok?'ok':'no');if(!ok)box.querySelectorAll('.quizOpt')[item.a].classList.add('ok');document.getElementById('qres').textContent=(ok?'Correcto: ':'Casi: ')+item.e;});}document.getElementById('newQuiz').onclick=renderQuiz;renderQuiz();
+function calc(){const a=+document.getElementById('a').value,ex=+document.getElementById('ex').value,b=+document.getElementById('b').value,ey=+document.getElementById('ey').value,c=+document.getElementById('c').value;const r=a*ex+b*ey+c;document.getElementById('calcResult').textContent='Resultado: '+a+'·'+ex+' + '+b+'·'+ey+' + '+c+' = '+r;}document.getElementById('calc').onclick=calc;['a','ex','b','ey','c'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+</script>
+</body>
+</html>
