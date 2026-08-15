@@ -1,0 +1,16 @@
+{
+  "name": "Seber Regresión App",
+  "short_name": "Seber",
+  "description": "App didáctica para aprender análisis de regresión de Seber: vectores aleatorios, esperanza, covarianza y teoremas paso a paso.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07111f",
+  "theme_color": "#65d6ad",
+  "lang": "es-CL",
+  "categories": ["education", "books", "productivity"],
+  "icons": [
+    {"src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}
