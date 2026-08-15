@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Seber Regresión App">
+  <rect width="512" height="512" rx="112" fill="#07111f"/>
+  <circle cx="126" cy="118" r="88" fill="#65d6ad" opacity="0.95"/>
+  <circle cx="406" cy="396" r="106" fill="#73a7ff" opacity="0.9"/>
+  <path d="M140 352c56-132 104-196 168-196 45 0 78 33 106 78" fill="none" stroke="#f4f7fb" stroke-width="30" stroke-linecap="round"/>
+  <path d="M128 389h260" stroke="#f4f7fb" stroke-width="24" stroke-linecap="round"/>
+  <text x="256" y="290" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="150" fill="#f4f7fb">Σ</text>
+</svg>
