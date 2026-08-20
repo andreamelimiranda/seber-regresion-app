@@ -6,6 +6,12 @@ Aplicación didáctica e instalable para estudiar análisis de regresión usando
 
 https://andreamelimiranda.github.io/seber-regresion-app/
 
+## Nueva sección: ejercicios resueltos
+
+https://andreamelimiranda.github.io/seber-regresion-app/ejercicios.html
+
+Incluye Exercises 1a, Exercises 1b, Exercises 1c y Miscellaneous Exercises 1 convertidos a HTML liviano, sin subir PDFs al repositorio.
+
 ## Cómo instalar en el celular
 
 ### Android / Chrome
@@ -28,6 +34,7 @@ https://andreamelimiranda.github.io/seber-regresion-app/
 - Flashcards.
 - Quiz interactivo.
 - Calculadora simple de covarianza muestral.
+- Ejercicios resueltos del capítulo 1 en formato HTML.
 
 ## Importante
 
