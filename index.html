@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Seber Regresión App</title>
-  <meta name="description" content="Aplicación instalable para aprender análisis de regresión de Seber: vectores aleatorios, esperanza, covarianza y demostraciones paso a paso.">
+  <meta name="description" content="Aplicación instalable para aprender análisis de regresión de Seber: capítulo 1, teoremas, ejercicios resueltos y práctica.">
   <meta name="theme-color" content="#65d6ad">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,7 +18,9 @@
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <style>
-    :root{--bg:#07111f;--panel:#0f1b2d;--panel2:#14243a;--ink:#f4f7fb;--muted:#b8c6d8;--brand:#65d6ad;--brand2:#73a7ff;--warn:#ffd166;--bad:#ff7b7b;--line:#253a59;--shadow:0 18px 50px rgba(0,0,0,.30);--radius:22px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top left,#18335c 0,#07111f 38%,#050915 100%);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58}.app{display:grid;grid-template-columns:295px 1fr;min-height:100vh}.side{position:sticky;top:0;height:100vh;padding:23px;background:rgba(8,18,32,.94);border-right:1px solid var(--line);backdrop-filter:blur(14px);overflow:auto}.brand{display:flex;gap:12px;align-items:center;margin-bottom:20px}.logo{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#06111f;font-size:24px;font-weight:900}.brand h1{font-size:18px;margin:0}.brand p{font-size:13px;color:var(--muted);margin:0}.installBox{padding:14px;border:1px solid rgba(101,214,173,.35);background:rgba(101,214,173,.08);border-radius:16px;margin-bottom:16px}.installBox b{color:#d8fff2}.progress{padding:14px;border:1px solid var(--line);background:var(--panel);border-radius:16px;margin-bottom:18px}.bar{height:9px;background:#0a1220;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--brand2));transition:.25s}.nav a{display:block;color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:12px;margin:3px 0;font-size:14px}.nav a:hover,.nav a.active{background:var(--panel2);color:#fff}.main{padding:32px;max-width:1180px;width:100%;margin:0 auto}.hero{position:relative;padding:42px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(101,214,173,.18),rgba(115,167,255,.14)),var(--panel);box-shadow:var(--shadow);border:1px solid var(--line);overflow:hidden}.hero:after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:rgba(101,214,173,.12)}.pill{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:99px;background:rgba(101,214,173,.13);border:1px solid rgba(101,214,173,.35);color:#d8fff2;font-size:13px;font-weight:800}.hero h2{font-size:clamp(31px,5vw,58px);line-height:1.03;margin:18px 0 12px}.hero p{font-size:18px;color:var(--muted);max-width:850px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn,button{border:0;border-radius:14px;padding:12px 16px;font-weight:850;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}.btn{background:var(--brand);color:#06111f}.btn.secondary{background:#1c3150;color:#fff;border:1px solid var(--line)}button{background:#203653;color:#fff}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:22px}.card{grid-column:span 12;background:rgba(15,27,45,.94);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}.half{grid-column:span 6}.third{grid-column:span 4}.two{grid-column:span 8}h3{font-size:30px;margin:0 0 12px}h4{font-size:21px;margin:20px 0 8px}.muted{color:var(--muted)}.formula{padding:18px;border-radius:18px;background:#07111f;border:1px solid #274064;overflow:auto;margin:14px 0}.tag{display:inline-block;background:#1a2e4a;color:#cfe0ff;border:1px solid #2f4d74;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:850;margin:4px 4px 4px 0}.step{border-left:4px solid var(--brand);padding:12px 14px;background:rgba(101,214,173,.08);border-radius:0 14px 14px 0;margin:10px 0}.warn{border-left-color:var(--warn);background:rgba(255,209,102,.08)}.bad{border-left-color:var(--bad);background:rgba(255,123,123,.08)}details{border:1px solid var(--line);border-radius:16px;padding:13px 16px;background:#0b1728;margin:10px 0}summary{cursor:pointer;font-weight:900}.flash{min-height:190px;display:grid;place-items:center;text-align:center;padding:24px;background:linear-gradient(135deg,#122746,#0d182a);border:1px solid var(--line);border-radius:20px}.flash strong{font-size:25px}.quizOpt{display:block;width:100%;text-align:left;margin:8px 0;background:#11233a;border:1px solid var(--line);color:#fff}.quizOpt.ok{border-color:var(--brand);background:rgba(101,214,173,.18)}.quizOpt.no{border-color:var(--bad);background:rgba(255,123,123,.16)}input{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#07111f;color:#fff}.calcRow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.result{padding:14px;border-radius:14px;background:#07111f;border:1px dashed #42638e;margin-top:12px;color:#d8fff2}.miniTable{width:100%;border-collapse:collapse;overflow:hidden;border-radius:14px}.miniTable td,.miniTable th{border:1px solid var(--line);padding:10px;text-align:left}.miniTable th{background:#10233b}.footer{color:var(--muted);font-size:13px;margin:28px 0}.hamb{display:none;position:fixed;right:18px;bottom:18px;z-index:20;background:var(--brand);color:#07111f}.small{font-size:13px}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#10233b;border:1px solid var(--line);box-shadow:var(--shadow);padding:12px 16px;border-radius:16px;display:none;z-index:30;max-width:92%;text-align:center}@media(max-width:900px){.app{grid-template-columns:1fr}.side{position:fixed;z-index:10;transform:translateX(-105%);transition:.25s;width:295px}.side.open{transform:none}.main{padding:18px;padding-bottom:90px}.half,.third,.two{grid-column:span 12}.hamb{display:block}.calcRow{grid-template-columns:1fr}.hero{padding:28px}.card{padding:18px}}
+    :root{--bg:#07111f;--panel:#0f1b2d;--panel2:#14243a;--ink:#f4f7fb;--muted:#b8c6d8;--brand:#65d6ad;--brand2:#73a7ff;--warn:#ffd166;--bad:#ff7b7b;--line:#253a59;--shadow:0 18px 50px rgba(0,0,0,.30);--radius:22px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top left,#18335c 0,#07111f 38%,#050915 100%);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58}.app{display:grid;grid-template-columns:295px 1fr;min-height:100vh}.side{position:sticky;top:0;height:100vh;padding:23px;background:rgba(8,18,32,.94);border-right:1px solid var(--line);backdrop-filter:blur(14px);overflow:auto}.brand{display:flex;gap:12px;align-items:center;margin-bottom:20px}.logo{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#06111f;font-size:24px;font-weight:900}.brand h1{font-size:18px;margin:0}.brand p{font-size:13px;color:var(--muted);margin:0}.installBox{padding:14px;border:1px solid rgba(101,214,173,.35);background:rgba(101,214,173,.08);border-radius:16px;margin-bottom:16px}.installBox b{color:#d8fff2}.nav a{display:block;color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:12px;margin:3px 0;font-size:14px}.nav a:hover,.nav a.active{background:var(--panel2);color:#fff}.main{padding:32px;max-width:1180px;width:100%;margin:0 auto}.hero{position:relative;padding:42px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(101,214,173,.18),rgba(115,167,255,.14)),var(--panel);box-shadow:var(--shadow);border:1px solid var(--line);overflow:hidden}.hero:after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:rgba(101,214,173,.12)}.pill{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:99px;background:rgba(101,214,173,.13);border:1px solid rgba(101,214,173,.35);color:#d8fff2;font-size:13px;font-weight:800}.hero h2{font-size:clamp(31px,5vw,58px);line-height:1.03;margin:18px 0 12px}.hero p{font-size:18px;color:var(--muted);max-width:850px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn,button{border:0;border-radius:14px;padding:12px 16px;font-weight:850;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}.btn{background:var(--brand);color:#06111f}.btn.secondary{background:#1c3150;color:#fff;border:1px solid var(--line)}button{background:#203653;color:#fff}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:22px}.card{grid-column:span 12;background:rgba(15,27,45,.94);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}.half{grid-column:span 6}.third{grid-column:span 4}.two{grid-column:span 8}h3{font-size:30px;margin:0 0 12px}h4{font-size:21px;margin:20px 0 8px}.muted{color:var(--muted)}.formula{padding:18px;border-radius:18px;background:#07111f;border:1px solid #274064;overflow:auto;margin:14px 0}.tag{display:inline-block;background:#1a2e4a;color:#cfe0ff;border:1px solid #2f4d74;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:850;margin:4px 4px 4px 0}.step{border-left:4px solid var(--brand);padding:12px 14px;background:rgba(101,214,173,.08);border-radius:0 14px 14px 0;margin:10px 0}.warn{border-left-color:var(--warn);background:rgba(255,209,102,.08)}.module{border:1px solid rgba(101,214,173,.55);background:linear-gradient(135deg,rgba(101,214,173,.14),rgba(115,167,255,.12)),rgba(15,27,45,.97)}.bigicon{width:62px;height:62px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#06111f;font-size:30px;font-weight:950;margin-bottom:12px}.formula-card{min-height:155px}.footer{color:var(--muted);font-size:13px;margin:28px 0}.hamb{display:none;position:fixed;right:18px;bottom:18px;z-index:20;background:var(--brand);color:#07111f}.small{font-size:13px}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#10233b;border:1px solid var(--line);box-shadow:var(--shadow);padding:12px 16px;border-radius:16px;display:none;z-index:30;max-width:92%;text-align:center}
+    @media(max-width:900px){.app{grid-template-columns:1fr}.side{position:fixed;z-index:10;transform:translateX(-105%);transition:.25s;width:295px}.side.open{transform:none}.main{padding:18px;padding-bottom:90px}.half,.third,.two{grid-column:span 12}.hamb{display:block}.hero{padding:28px}.card{padding:18px}.actions .btn,.actions button{width:100%;justify-content:center}}
   </style>
 </head>
 <body>
@@ -26,29 +28,57 @@
   <aside class="side" id="side">
     <div class="brand"><div class="logo">Σ</div><div><h1>Seber Regresión</h1><p>App instalable · Capítulo 1</p></div></div>
     <div class="installBox"><b>Instalable en celular</b><p class="muted small" id="installHint">Abre esta página en Chrome Android y usa “Agregar a pantalla principal”.</p><button id="installBtn" style="display:none">📲 Instalar app</button></div>
-    <div class="progress"><b>Progreso</b><p class="muted" id="progressText">0 secciones vistas</p><div class="bar"><span id="progressBar"></span></div></div>
     <nav class="nav" id="nav">
-      <a href="#inicio">Inicio</a><a href="#instalar">Instalar</a><a href="#mapa">Mapa</a><a href="#def">Definiciones</a><a href="#t42">Teorema 4.2</a><a href="#t44">Teorema 4.4</a><a href="#transformaciones">Transformaciones</a><a href="#formas">Formas cuadráticas</a><a href="#flashcards">Flashcards</a><a href="#quiz">Quiz</a><a href="#calculadora">Calculadora</a>
+      <a href="#inicio">Inicio</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#ejercicios">Ejercicios capítulo 1</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#teoremas">Teoremas</a>
+      <a href="#formulas">Fórmulas clave</a>
+      <a href="#instalar">Instalar</a>
     </nav>
   </aside>
+
   <main class="main">
     <button class="hamb" id="hamb">☰ Menú</button>
 
     <section class="hero sec" id="inicio">
-      <span class="pill">PWA · sin PDFs · liviana</span>
+      <span class="pill">PWA · Seber & Lee · Capítulo 1</span>
       <h2>Análisis de Regresión de Seber, explicado paso a paso</h2>
-      <p>App didáctica para estudiar el capítulo de vectores de variables aleatorias: esperanza, covarianza, transformaciones lineales y demostraciones. Puedes instalarla como acceso directo tipo aplicación en tu celular.</p>
-      <div class="actions"><a class="btn" href="#instalar">📲 Instalar en celular</a><a class="btn secondary" href="#t42">Empezar teoremas</a><a class="btn secondary" href="#quiz">Practicar</a></div>
+      <p>App didáctica para estudiar vectores de variables aleatorias, esperanza, covarianza, transformaciones lineales, formas cuadráticas y ahora también los ejercicios resueltos del capítulo 1.</p>
+      <div class="actions">
+        <a class="btn" href="#modulos">Ver módulos</a>
+        <a class="btn secondary" href="#ejercicios">📘 Ejercicios resueltos</a>
+        <a class="btn secondary" href="#teoremas">Empezar teoremas</a>
+      </div>
     </section>
 
-    <section class="grid sec" id="instalar">
-      <div class="card">
-        <h3>Cómo instalarla en tu celular</h3>
-        <div class="grid">
-          <div class="card half"><h4>Android / Chrome</h4><p>Abre esta página en Chrome. Si aparece el botón <b>“Instalar app”</b>, presiónalo. Si no aparece, toca los tres puntos ⋮ y elige <b>Agregar a pantalla principal</b>.</p><button id="installBtn2">📲 Instalar app</button></div>
-          <div class="card half"><h4>iPhone / Safari</h4><p>Abre esta página en Safari, toca el botón de compartir y elige <b>Agregar a pantalla de inicio</b>. iPhone normalmente no muestra botón automático de instalación.</p></div>
+    <section class="grid sec" id="modulos">
+      <div class="card"><h3>Módulos de estudio</h3><p class="muted">Cada módulo te lleva a una parte distinta del capítulo.</p></div>
+
+      <div class="card third module" id="ejercicios">
+        <div class="bigicon">📘</div>
+        <span class="pill">PDF externo en Google Drive</span>
+        <h3>Ejercicios capítulo 1 resueltos</h3>
+        <p class="muted">Abre el documento PDF que subiste a Google Drive con las soluciones del capítulo 1.</p>
+        <div class="actions">
+          <a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1QsWneVkb0fPSYrfA4uIIC9YvRZcwS7AX/view?usp=drivesdk">Abrir PDF en Drive</a>
         </div>
-        <div class="step warn"><b>Importante:</b> para que aparezca como app, debes abrir el enlace desde el navegador del celular, no desde la vista previa dentro de WhatsApp o Instagram.</div>
+        <p class="small muted">Para que otros lo vean, el archivo debe estar compartido como “Cualquier persona con el enlace puede ver”.</p>
+      </div>
+
+      <div class="card third">
+        <div class="bigicon">🧠</div>
+        <h3>Teoremas y demostraciones</h3>
+        <p class="muted">Repasa esperanza matricial, covarianza y transformaciones lineales.</p>
+        <div class="actions"><a class="btn secondary" href="#teoremas">Ver teoremas</a></div>
+      </div>
+
+      <div class="card third">
+        <div class="bigicon">Σ</div>
+        <h3>Fórmulas clave</h3>
+        <p class="muted">Resumen rápido de las identidades que más se repiten en los ejercicios.</p>
+        <div class="actions"><a class="btn secondary" href="#formulas">Ver fórmulas</a></div>
       </div>
     </section>
 
@@ -65,56 +95,35 @@
       </div>
     </section>
 
-    <section class="grid sec" id="def">
-      <div class="card"><h3>Definiciones base</h3>
-        <span class="tag">Variable aleatoria</span><span class="tag">Vector aleatorio</span><span class="tag">Esperanza</span><span class="tag">Covarianza</span>
-        <h4>¿Qué significa que algo sea aleatorio?</h4><p>Significa que antes de observarlo no tiene un valor fijo. Por ejemplo, si todavía no tomas la muestra, el peso de la persona 1 es una variable aleatoria $X_1$.</p>
-        <h4>Vector aleatorio</h4><div class="formula">$$\mathbf X=\begin{pmatrix}X_1\\X_2\\\vdots\\X_n\end{pmatrix}$$</div><p>Después de medir, obtienes una realización observada, por ejemplo $x=(72,85,64)'$.</p>
-        <h4>Esperanza entrada por entrada</h4><div class="formula">$$E[\mathbf Z]=(E[Z_{ij}])$$</div>
-        <h4>Covarianza entre vectores</h4><div class="formula">$$\operatorname{Cov}(\mathbf X,\mathbf Y)=(\operatorname{cov}(X_i,Y_j))$$</div>
+    <section class="grid sec" id="teoremas">
+      <div class="card half"><h3>Teorema 4.2</h3><p>Si $A$, $B$ y $C$ son matrices constantes y $Z$ es una matriz aleatoria, entonces:</p><div class="formula">$$E[AZB+C]=AE[Z]B+C$$</div><div class="step"><b>Idea:</b> la esperanza no toca constantes; solo promedia lo aleatorio.</div></div>
+      <div class="card half"><h3>Teorema 4.4</h3><p>Si $E[X]=\alpha$ y $E[Y]=\beta$, entonces:</p><div class="formula">$$\operatorname{Cov}(X,Y)=E[(X-\alpha)(Y-\beta)']$$</div><div class="step"><b>Idea:</b> covarianza = promedio de productos de desviaciones.</div></div>
+      <div class="card half"><h3>Transformaciones lineales</h3><div class="formula">$$E[AX+c]=AE[X]+c$$</div><div class="formula">$$Var(AX)=A Var(X) A'$$</div><div class="formula">$$Cov(AX,BY)=A Cov(X,Y)B'$$</div></div>
+      <div class="card half"><h3>Formas cuadráticas</h3><p>Una forma cuadrática tiene estructura:</p><div class="formula">$$X'AX$$</div><p class="muted">En regresión aparece en sumas de cuadrados, errores y variabilidad explicada.</p></div>
+    </section>
+
+    <section class="grid sec" id="formulas">
+      <div class="card"><h3>Fórmulas clave para resolver ejercicios</h3></div>
+      <div class="card third formula-card"><h4>Esperanza lineal</h4><div class="formula">$$E[AX+B]=AE[X]+B$$</div></div>
+      <div class="card third formula-card"><h4>Varianza matricial</h4><div class="formula">$$Var(AX)=A Var(X)A'$$</div></div>
+      <div class="card third formula-card"><h4>Covarianza cruzada</h4><div class="formula">$$Cov(AX,BY)=A Cov(X,Y)B'$$</div></div>
+      <div class="card third formula-card"><h4>Forma cuadrática</h4><div class="formula">$$E[X'AX]=tr(A\Sigma)+\mu'A\mu$$</div></div>
+      <div class="card third formula-card"><h4>Norma cuadrática</h4><div class="formula">$$E[\|X-a\|^2]=\sum_i\sigma_{ii}+\|E[X]-a\|^2$$</div></div>
+      <div class="card third formula-card"><h4>Covarianza centrada</h4><div class="formula">$$Cov(X,Y)=E[(X-E[X])(Y-E[Y])']$$</div></div>
+    </section>
+
+    <section class="grid sec" id="instalar">
+      <div class="card">
+        <h3>Cómo instalarla en tu celular</h3>
+        <div class="grid">
+          <div class="card half"><h4>Android / Chrome</h4><p>Abre esta página en Chrome. Si aparece el botón <b>“Instalar app”</b>, presiónalo. Si no aparece, toca los tres puntos ⋮ y elige <b>Agregar a pantalla principal</b>.</p><button id="installBtn2">📲 Instalar app</button></div>
+          <div class="card half"><h4>iPhone / Safari</h4><p>Abre esta página en Safari, toca el botón de compartir y elige <b>Agregar a pantalla de inicio</b>.</p></div>
+        </div>
+        <div class="step warn"><b>Importante:</b> para que aparezca como app, debes abrir el enlace desde el navegador del celular, no desde la vista previa dentro de WhatsApp o Instagram.</div>
       </div>
     </section>
 
-    <section class="grid sec" id="t42"><div class="card"><h3>Teorema 4.2: esperanza del sándwich matricial</h3>
-      <p>Si $A$, $B$ y $C$ son matrices constantes y $Z$ es una matriz aleatoria, entonces:</p><div class="formula">$$E[AZB+C]=AE[Z]B+C$$</div>
-      <div class="step"><b>Idea para memorizar:</b> la esperanza no toca constantes; solo promedia lo aleatorio.</div>
-      <h4>Demostración paso a paso</h4>
-      <div class="step"><b>Paso 1.</b> Define $W=AZB+C$.</div><div class="step"><b>Paso 2.</b> Mira una entrada específica: $$W_{ij}=\sum_r\sum_s a_{ir}Z_{rs}b_{sj}+c_{ij}.$$</div><div class="step"><b>Paso 3.</b> Aplica esperanza. Como $a_{ir}$, $b_{sj}$ y $c_{ij}$ son constantes, salen: $$E[W_{ij}]=\sum_r\sum_s a_{ir}E[Z_{rs}]b_{sj}+c_{ij}.$$</div><div class="step"><b>Paso 4.</b> Esa entrada es exactamente la entrada $(i,j)$ de $AE[Z]B+C$.</div>
-      <details><summary>Analogía del sándwich</summary><p>$A$ y $B$ son el pan. $Z$ es el relleno aleatorio. $C$ es la salsa. La esperanza cambia solo el relleno por su promedio.</p></details>
-    </div></section>
-
-    <section class="grid sec" id="t44"><div class="card"><h3>Teorema 4.4: covarianza como productos de desviaciones</h3>
-      <p>Si $E[X]=\alpha$ y $E[Y]=\beta$, entonces:</p><div class="formula">$$\operatorname{Cov}(X,Y)=E[(X-\alpha)(Y-\beta)']$$</div>
-      <div class="step"><b>Idea clave:</b> covarianza = promedio de productos de desviaciones.</div>
-      <h4>Demostración paso a paso</h4>
-      <div class="step"><b>Paso 1.</b> Por definición, $\operatorname{Cov}(X,Y)$ es una matriz cuyas entradas son $\operatorname{cov}(X_i,Y_j)$.</div>
-      <div class="step"><b>Paso 2.</b> Cada entrada cumple: $$\operatorname{cov}(X_i,Y_j)=E[(X_i-\alpha_i)(Y_j-\beta_j)].$$</div>
-      <div class="step"><b>Paso 3.</b> El producto $(X-\alpha)(Y-\beta)'$ genera todas esas combinaciones cruzadas.</div>
-      <div class="step"><b>Paso 4.</b> Al aplicar esperanza entrada por entrada, obtienes la matriz de covarianzas.</div>
-      <details><summary>Ejemplo con 2 componentes</summary><div class="formula">$$E[(X-\alpha)(Y-\beta)']=\begin{pmatrix}cov(X_1,Y_1)&cov(X_1,Y_2)\\cov(X_2,Y_1)&cov(X_2,Y_2)\end{pmatrix}$$</div></details>
-    </div></section>
-
-    <section class="grid sec" id="transformaciones"><div class="card"><h3>Transformaciones lineales</h3>
-      <p>Cuando multiplicas un vector aleatorio por una matriz constante, estás combinando variables. En regresión, esto aparece todo el tiempo.</p>
-      <div class="formula">$$E[AX+c]=AE[X]+c$$</div><div class="formula">$$Var(AX)=A Var(X) A'$$</div><div class="formula">$$Cov(AX,BY)=A Cov(X,Y)B'$$</div>
-      <div class="step"><b>Regla mental:</b> en esperanza, las constantes salen. En varianza/covarianza, aparece la transpuesta porque estás multiplicando desviaciones por ambos lados.</div>
-    </div></section>
-
-    <section class="grid sec" id="formas"><div class="card"><h3>Formas cuadráticas</h3>
-      <p>Una forma cuadrática tiene esta estructura:</p><div class="formula">$$X'AX$$</div>
-      <p>En regresión aparecen cuando medimos sumas de cuadrados, errores y variabilidad explicada.</p>
-      <div class="step"><b>Lectura simple:</b> $X'AX$ toma un vector, lo transforma con $A$ y entrega un número que resume variabilidad.</div>
-      <details><summary>Conexión con regresión</summary><p>Muchas cantidades como suma de cuadrados del error se escriben como formas cuadráticas. Por eso el capítulo insiste tanto en vectores y matrices.</p></details>
-    </div></section>
-
-    <section class="grid sec" id="flashcards"><div class="card half"><h3>Flashcard</h3><div class="flash" id="flash"><strong>Presiona “Nueva tarjeta”.</strong></div><div class="actions"><button id="newCard">Nueva tarjeta</button><button id="flipCard">Dar vuelta</button></div></div>
-      <div class="card half"><h3>Reglas de memoria</h3><p><b>1.</b> La esperanza solo toca lo aleatorio.</p><p><b>2.</b> Covarianza es producto promedio de desviaciones.</p><p><b>3.</b> Si hay matrices constantes, salen de la esperanza.</p><p><b>4.</b> En varianza aparece la transpuesta: $AVA'$.</p></div></section>
-
-    <section class="grid sec" id="quiz"><div class="card"><h3>Quiz rápido</h3><p class="muted">Responde y revisa al tiro.</p><div id="quizBox"></div><div class="actions"><button id="nextQ">Siguiente pregunta</button></div></div></section>
-
-    <section class="grid sec" id="calculadora"><div class="card"><h3>Mini calculadora de covarianza muestral</h3><p class="muted">Ingresa dos listas separadas por coma. Ejemplo: 1,2,3 y 2,4,6.</p><div class="calcRow"><div><label>X</label><input id="xs" value="1,2,3,4"></div><div><label>Y</label><input id="ys" value="2,4,5,8"></div></div><div class="actions"><button id="calc">Calcular</button></div><div class="result" id="calcOut">Resultado pendiente.</div></div></section>
-
-    <p class="footer">Aplicación didáctica propia para estudiar análisis de regresión. No incluye PDFs ni material pesado.</p>
+    <p class="footer">Aplicación didáctica propia para estudiar análisis de regresión. Los ejercicios resueltos se abren desde Google Drive mediante enlace externo.</p>
   </main>
 </div>
 <div class="toast" id="toast"></div>
@@ -122,16 +131,13 @@
 const $=s=>document.querySelector(s);const $$=s=>Array.from(document.querySelectorAll(s));
 $('#hamb').onclick=()=>$('#side').classList.toggle('open');
 $$('.nav a').forEach(a=>a.onclick=()=>$('#side').classList.remove('open'));
-const seen=new Set();const sections=$$('.sec');const bar=$('#progressBar'),txt=$('#progressText');
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){seen.add(e.target.id);const p=Math.round(seen.size/sections.length*100);bar.style.width=p+'%';txt.textContent=seen.size+' secciones vistas de '+sections.length;$$('.nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}})},{threshold:.35});sections.forEach(s=>io.observe(s));
+const sections=$$('.sec');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){$$('.nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}})},{threshold:.35});sections.forEach(s=>io.observe(s));
 function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',3500)}
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').then(()=>toast('App lista para instalar y usar con caché básico.')).catch(()=>{}));}
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 let installPrompt=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('#installBtn').style.display='inline-flex';$('#installHint').textContent='Tu navegador permite instalarla ahora.'});
 async function installApp(){if(!installPrompt){toast('Si no aparece el botón, usa menú ⋮ > Agregar a pantalla principal.');return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('#installBtn').style.display='none';toast('Si aceptaste, la app quedó en tu pantalla de inicio.');}
 $('#installBtn').onclick=installApp;$('#installBtn2').onclick=installApp;
-const cards=[['¿Qué significa que Z sea aleatoria?','Que sus entradas todavía no están fijas: dependen de una muestra o experimento.'],['Regla del sándwich','E[AZB+C]=AE[Z]B+C'],['Frase clave de esperanza','La esperanza no toca constantes; solo promedia lo aleatorio.'],['Covarianza entre vectores','Es una matriz con todas las covarianzas cov(X_i,Y_j).'],['Fórmula de covarianza vectorial','Cov(X,Y)=E[(X-alpha)(Y-beta)\']'],['¿Por qué aparece transpuesta?','Porque necesitamos convertir Y-beta en fila para formar productos cruzados.']];let ci=0,front=true;function showCard(){const c=cards[ci];$('#flash').innerHTML='<strong>'+ (front?c[0]:c[1]) +'</strong>'}$('#newCard').onclick=()=>{ci=Math.floor(Math.random()*cards.length);front=true;showCard()};$('#flipCard').onclick=()=>{front=!front;showCard()};
-const qs=[{q:'¿Qué parte es aleatoria en E[AZB+C]?',a:['A','Z','B','C'],ok:1},{q:'¿Qué significa E[Z]=(E[Z_ij])?',a:['Se invierte la matriz','Se promedia cada entrada','Se multiplica por cero','Se ordenan las filas'],ok:1},{q:'Covarianza es...',a:['Promedio de productos de desviaciones','Solo una resta','Siempre cero','Una matriz identidad'],ok:0},{q:'Si Var(X)=V, entonces Var(AX)=...',a:['AV','AVA\'','A+V','V/A'],ok:1}];let qi=0;function renderQ(){const q=qs[qi];$('#quizBox').innerHTML='<h4>'+q.q+'</h4>'+q.a.map((x,i)=>'<button class="quizOpt" data-i="'+i+'">'+x+'</button>').join('');$$('.quizOpt').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;$$('.quizOpt').forEach((o,j)=>o.classList.add(j===q.ok?'ok':(j===i?'no':'')));});}$('#nextQ').onclick=()=>{qi=(qi+1)%qs.length;renderQ()};renderQ();
-function nums(s){return s.split(',').map(x=>parseFloat(x.trim())).filter(x=>!Number.isNaN(x))}$('#calc').onclick=()=>{const x=nums($('#xs').value),y=nums($('#ys').value);if(x.length!==y.length||x.length<2){$('#calcOut').textContent='Necesitas dos listas del mismo largo y al menos 2 datos.';return}const mx=x.reduce((a,b)=>a+b,0)/x.length,my=y.reduce((a,b)=>a+b,0)/y.length;const cov=x.reduce((acc,v,i)=>acc+(v-mx)*(y[i]-my),0)/(x.length-1);$('#calcOut').innerHTML='Promedio X = '+mx.toFixed(3)+'<br>Promedio Y = '+my.toFixed(3)+'<br>Covarianza muestral = <b>'+cov.toFixed(3)+'</b>';};
 </script>
 </body>
 </html>
