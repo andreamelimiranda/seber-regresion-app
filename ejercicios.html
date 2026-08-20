@@ -4,215 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Ejercicios resueltos | Seber Regresión App</title>
+  <meta name="description" content="Botón directo al PDF de ejercicios resueltos del capítulo 1 en Google Drive.">
   <meta name="theme-color" content="#65d6ad">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
-  <script>
-    window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]]},svg:{fontCache:"global"}};
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <style>
-    :root{--bg:#07111f;--panel:#0f1b2d;--panel2:#14243a;--ink:#f7fbff;--muted:#b8c6d8;--brand:#65d6ad;--brand2:#73a7ff;--warn:#ffd166;--line:#253a59;--r:22px;--shadow:0 18px 55px rgba(0,0,0,.28)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 0 0,#17375f 0,#07111f 38%,#050914 100%);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58}.wrap{max-width:1120px;margin:auto;padding:24px}.top{position:sticky;top:0;z-index:5;background:rgba(7,17,31,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.top .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}.logo{display:flex;gap:12px;align-items:center}.mark{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#06111f;display:grid;place-items:center;font-weight:950;font-size:22px}.logo h1{font-size:18px;margin:0}.logo p{margin:0;color:var(--muted);font-size:13px}.btn{border:0;border-radius:14px;padding:10px 14px;text-decoration:none;font-weight:850;background:var(--brand);color:#06111f;display:inline-flex;align-items:center;gap:8px}.btn.dark{background:#1c3150;color:#fff;border:1px solid var(--line)}.hero{margin-top:26px;padding:38px;border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow);background:linear-gradient(135deg,rgba(101,214,173,.16),rgba(115,167,255,.13)),var(--panel)}.hero h2{font-size:clamp(30px,5vw,56px);line-height:1.04;margin:12px 0}.hero p{max-width:850px;color:var(--muted);font-size:18px}.pill{display:inline-block;padding:6px 12px;border-radius:999px;border:1px solid rgba(101,214,173,.35);background:rgba(101,214,173,.12);color:#d8fff2;font-weight:850;font-size:13px}.toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.card{background:rgba(15,27,45,.95);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);margin:18px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.full{grid-column:1/-1}h3{font-size:30px;margin:0 0 10px}h4{font-size:21px;margin:22px 0 8px}.muted{color:var(--muted)}details{border:1px solid var(--line);border-radius:18px;background:#0b1728;margin:12px 0;overflow:hidden}summary{cursor:pointer;padding:16px 18px;font-weight:900;background:#10233b}details[open] summary{border-bottom:1px solid var(--line)}.inside{padding:18px}.formula{background:#06101e;border:1px solid #294467;border-radius:16px;padding:14px;overflow:auto;margin:12px 0}.step{border-left:4px solid var(--brand);background:rgba(101,214,173,.08);padding:12px 14px;border-radius:0 14px 14px 0;margin:10px 0}.warn{border-left-color:var(--warn);background:rgba(255,209,102,.08)}.tag{display:inline-block;margin:4px 4px 4px 0;padding:5px 10px;border-radius:999px;background:#1a2e4a;border:1px solid #2f4d74;color:#dce9ff;font-size:12px;font-weight:850}.result{border:1px solid rgba(101,214,173,.48);background:rgba(101,214,173,.08);padding:12px 14px;border-radius:16px;margin-top:12px}.small{font-size:13px}.backTop{position:fixed;right:18px;bottom:18px}.footer{margin:36px 0;color:var(--muted);font-size:13px}@media(max-width:820px){.wrap{padding:16px}.top .wrap{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.hero{padding:26px}.btn{width:100%;justify-content:center}.toc .btn{width:auto}}
+    :root{--bg:#07111f;--panel:#0f1b2d;--ink:#f7fbff;--muted:#b8c6d8;--brand:#65d6ad;--brand2:#73a7ff;--line:#253a59;--shadow:0 24px 70px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at top left,#183b65 0,#07111f 40%,#050914 100%);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;padding:22px}
+    .card{width:min(860px,100%);background:linear-gradient(135deg,rgba(101,214,173,.15),rgba(115,167,255,.12)),var(--panel);border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:var(--shadow);text-align:center}
+    .logo{width:64px;height:64px;border-radius:20px;margin:0 auto 18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#06111f;font-size:30px;font-weight:950}
+    .pill{display:inline-block;padding:7px 13px;border-radius:999px;border:1px solid rgba(101,214,173,.38);background:rgba(101,214,173,.13);color:#d8fff2;font-size:13px;font-weight:850;margin-bottom:12px}
+    h1{font-size:clamp(30px,6vw,54px);line-height:1.03;margin:10px 0 12px}
+    p{color:var(--muted);font-size:18px;max-width:690px;margin:0 auto 20px}
+    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+    .btn{border:0;border-radius:16px;padding:14px 18px;text-decoration:none;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-width:220px}
+    .primary{background:var(--brand);color:#06111f}
+    .secondary{background:#1c3150;color:#fff;border:1px solid var(--line)}
+    .note{margin-top:22px;font-size:14px;color:var(--muted)}
+    @media(max-width:650px){.card{padding:26px 18px}.btn{width:100%}}
   </style>
 </head>
 <body>
-  <header class="top"><div class="wrap"><div class="logo"><div class="mark">Σ</div><div><h1>Seber Regresión App</h1><p>Ejercicios resueltos · Capítulo 1</p></div></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn dark" href="./">Volver a la app</a><a class="btn" href="#resumen">Resumen final</a></div></div></header>
-  <main class="wrap">
-    <section class="hero">
-      <span class="pill">Sin PDF subido a GitHub · contenido convertido a HTML</span>
-      <h2>Ejercicios resueltos del Capítulo 1</h2>
-      <p>Esta sección agrega a la app los ejercicios resueltos del capítulo 1 de Seber & Lee. Están organizados como tarjetas desplegables para estudiar desde el celular sin cargar archivos pesados.</p>
-      <div class="toc"><a class="btn" href="#a">Exercises 1a</a><a class="btn" href="#b">Exercises 1b</a><a class="btn" href="#c">Exercises 1c</a><a class="btn" href="#m">Misceláneos</a></div>
-    </section>
-
-    <section class="card" id="a">
-      <h3>1. Exercises 1a</h3>
-      <p class="muted">Ideas dominantes: esperanza matricial, covarianza, acumulaciones y matrices de varianza.</p>
-      <details open><summary>Ejercicio 1a.1 — Descomposición de $E[(X-a)(X-a)']$</summary><div class="inside">
-        <p><b>Enunciado.</b> Sea $a$ un vector constante. Probar que</p>
-        <div class="formula">\[E[(X-a)(X-a)']=Var[X]+(E[X]-a)(E[X]-a)'.\]</div>
-        <p>Si $Var[X]=\Sigma=(\sigma_{ij})$, deducir que</p>
-        <div class="formula">\[E[\|X-a\|^2]=\sum_i \sigma_{ii}+\|E[X]-a\|^2.\]</div>
-        <div class="step"><b>Paso 1.</b> Llamamos $\mu=E[X]$ y escribimos $X-a=(X-\mu)+(\mu-a)$.</div>
-        <div class="step"><b>Paso 2.</b> Expandimos el producto exterior:
-          \[(X-a)(X-a)'=(X-\mu)(X-\mu)' +(X-\mu)(\mu-a)' +(\mu-a)(X-\mu)' +(\mu-a)(\mu-a)'.\]</div>
-        <div class="step"><b>Paso 3.</b> Al aplicar esperanza, los términos cruzados se anulan porque $E[X-\mu]=0$.</div>
-        <div class="formula">\[E[(X-a)(X-a)']=E[(X-\mu)(X-\mu)']+(\mu-a)(\mu-a)'.\]</div>
-        <div class="step"><b>Paso 4.</b> Como $E[(X-\mu)(X-\mu)']=Var[X]$, queda demostrado.</div>
-        <div class="step warn"><b>Norma.</b> Usamos $\|X-a\|^2=tr\{(X-a)(X-a)'\}$ y $tr(\Sigma)=\sum_i \sigma_{ii}$.</div>
-        <div class="result"><b>Resultado:</b> \[E[\|X-a\|^2]=\sum_i\sigma_{ii}+\|E[X]-a\|^2.\]</div>
-      </div></details>
-      <details><summary>Ejercicio 1a.2 — Restar constantes no cambia la covarianza</summary><div class="inside">
-        <p><b>Enunciado.</b> Si $X,Y$ son vectores aleatorios y $a,b$ son constantes, probar que $Cov[X-a,Y-b]=Cov[X,Y]$.</p>
-        <div class="step">Por definición,
-          \[Cov[X-a,Y-b]=E\{[(X-a)-E(X-a)][(Y-b)-E(Y-b)]'\}.\]</div>
-        <div class="step">Como $E[X-a]=E[X]-a$ y $E[Y-b]=E[Y]-b$, se obtiene
-          \[(X-a)-E[X-a]=X-E[X],\quad (Y-b)-E[Y-b]=Y-E[Y].\]</div>
-        <div class="result"><b>Resultado:</b> \[Cov[X-a,Y-b]=E\{[X-E[X]][Y-E[Y]]'\}=Cov[X,Y].\]</div>
-      </div></details>
-      <details><summary>Ejercicio 1a.3 — Matriz con entradas $\min(i,j)$</summary><div class="inside">
-        <p><b>Enunciado.</b> Sea $Y_1=X_1$ y $Y_i=X_i-X_{i-1}$ para $i=2,\ldots,n$. Si los $Y_i$ son independientes y tienen varianza unitaria, encontrar $Var[X]$.</p>
-        <div class="step">De las definiciones se obtiene la suma telescópica: \[X_i=\sum_{k=1}^{i}Y_k.\]</div>
-        <div class="step">Entonces
-          \[Cov(X_i,X_j)=Cov\left(\sum_{k=1}^{i}Y_k,\sum_{\ell=1}^{j}Y_\ell\right).\]</div>
-        <div class="step">Como los $Y_k$ son independientes, solo sobreviven los términos comunes a ambas sumas.</div>
-        <div class="result"><b>Resultado:</b> \[Cov(X_i,X_j)=\sum_{k=1}^{\min(i,j)} Var(Y_k)=\min(i,j).\]
-        Por tanto, $Var[X]=(\min(i,j))_{i,j=1}^n$.</div>
-      </div></details>
-      <details><summary>Ejercicio 1a.4 — Caso recursivo $X_{i+1}=\rho X_i$</summary><div class="inside">
-        <p><b>Enunciado.</b> Si $X_{i+1}=\rho X_i$ y $Var[X_1]=\sigma^2$, encontrar $Var[X]$.</p>
-        <div class="step">Por inducción, \[X_i=\rho^{i-1}X_1.\]</div>
-        <div class="step">Luego,
-          \[Cov(X_i,X_j)=Cov(\rho^{i-1}X_1,\rho^{j-1}X_1)=\rho^{i-1}\rho^{j-1}\sigma^2.\]</div>
-        <div class="result"><b>Resultado:</b> \[Cov(X_i,X_j)=\sigma^2\rho^{i+j-2},\quad Var[X]=\sigma^2(\rho^{i+j-2})_{i,j=1}^{n}.\]</div>
-      </div></details>
-    </section>
-
-    <section class="card" id="b"><h3>2. Exercises 1b</h3>
-      <p class="muted">Ideas dominantes: formas cuadráticas, estimadores insesgados y eficiencia.</p>
-      <details open><summary>Ejercicio 1b.1 — Esperanza de una forma cuadrática</summary><div class="inside">
-        <p><b>Enunciado.</b> Suponga que $X_1,X_2,X_3$ tienen media común $\mu$ y</p>
-        <div class="formula">\[Var[X]=\sigma^2\begin{pmatrix}1&0&0\\0&1&1/4\\0&1/4&1\end{pmatrix}.\]</div>
-        <p>Encontrar $E[X_1^2+2X_1X_2-4X_2X_3+X_3^2]$.</p>
-        <div class="step">Usamos $E[X_i^2]=Var(X_i)+E[X_i]^2=\sigma^2+\mu^2$.</div>
-        <div class="step">Además, $E[X_1X_2]=Cov(X_1,X_2)+\mu^2=\mu^2$ y $E[X_2X_3]=\sigma^2/4+\mu^2$.</div>
-        <div class="formula">\[E[Q]=(\sigma^2+\mu^2)+2\mu^2-4\left(\frac{\sigma^2}{4}+\mu^2\right)+(\sigma^2+\mu^2)=\sigma^2.\]</div>
-        <div class="result"><b>Resultado:</b> \[E[X_1^2+2X_1X_2-4X_2X_3+X_3^2]=\sigma^2.\]</div>
-      </div></details>
-      <details><summary>Ejercicio 1b.2 — Estimador insesgado de $Var(\bar X)$</summary><div class="inside">
-        <p><b>Enunciado.</b> Si $X_1,\ldots,X_n$ son independientes, con media común $\mu$ y varianzas $\sigma_1^2,\ldots,\sigma_n^2$, probar que</p>
-        <div class="formula">\[\frac{\sum_i(X_i-\bar X)^2}{n(n-1)}\]</div>
-        <p>es insesgado para $Var(\bar X)$.</p>
-        <div class="step">Como son independientes,
-          \[Var(\bar X)=Var\left(\frac1n\sum_i X_i\right)=\frac1{n^2}\sum_i\sigma_i^2.\]</div>
-        <div class="step">Además,
-          \[E\left[\sum_i(X_i-\bar X)^2\right]=\frac{n-1}{n}\sum_i\sigma_i^2.\]</div>
-        <div class="formula">\[E\left[\frac{\sum_i(X_i-\bar X)^2}{n(n-1)}\right]=\frac1{n^2}\sum_i\sigma_i^2=Var(\bar X).\]</div>
-        <div class="result"><b>Resultado:</b> el estimador es insesgado para $Var(\bar X)$.</div>
-      </div></details>
-      <details><summary>Ejercicio 1b.3 — Promedio ponderado óptimo</summary><div class="inside">
-        <p><b>Enunciado.</b> Sea $\bar X_w=\sum_i w_iX_i$, con $\sum_i w_i=1$. Probar que $Var(\bar X_w)$ se minimiza cuando $w_i\propto1/\sigma_i^2$.</p>
-        <div class="step">Por independencia, \[Var(\bar X_w)=\sum_i w_i^2\sigma_i^2.\]</div>
-        <div class="step">Minimizamos con restricción usando Lagrange:
-          \[L=\sum_i w_i^2\sigma_i^2-\lambda\left(\sum_i w_i-1\right).\]</div>
-        <div class="step">La condición de primer orden da $2w_i\sigma_i^2-\lambda=0$, por lo que $w_i\propto1/\sigma_i^2$.</div>
-        <div class="result"><b>Resultado:</b> \[w_i=\frac{\sigma_i^{-2}}{\sum_j\sigma_j^{-2}},\qquad v_{\min}=\frac1{\sum_j\sigma_j^{-2}}.\]</div>
-        <div class="step warn"><b>Parte (b).</b> Si $w_i\sigma_i^2=a$, entonces $Var(\bar X_w)=a=v_{\min}$ y
-          \[E\left[\sum_i w_i(X_i-\bar X_w)^2\right]=(n-1)v_{\min}.\]</div>
-        <div class="result"><b>Resultado:</b> \[E[S_w^2]=v_{\min},\quad S_w^2=\frac{\sum_i w_i(X_i-\bar X_w)^2}{n-1}.\]</div>
-      </div></details>
-      <details><summary>Ejercicio 1b.4 — Variables con correlación común $\rho$</summary><div class="inside">
-        <p><b>Enunciado.</b> $X_1,\ldots,X_n$ tienen media común no nula $\mu$, varianza común $\sigma^2$ y correlación común $\rho$.</p>
-        <div class="step">Como $Cov(X_i,X_j)=\rho\sigma^2$ si $i\ne j$,
-          \[Var(\bar X)=\frac1{n^2}\{n\sigma^2+n(n-1)\rho\sigma^2\}.\]</div>
-        <div class="result"><b>Resultado (a):</b> \[Var(\bar X)=\frac{\sigma^2}{n}\{1+(n-1)\rho\},\quad -\frac1{n-1}\le \rho\le1.\]</div>
-        <div class="step">Para $Q=a\sum_iX_i^2+b(\sum_iX_i)^2$ insesgado para $\sigma^2$, se igualan los coeficientes de $\mu^2$ y de $\sigma^2$.</div>
-        <div class="formula">\[an+bn^2=0,\qquad 1=a(n-1)(1-\rho).\]</div>
-        <div class="result"><b>Resultado (b):</b> \[a=\frac1{(1-\rho)(n-1)},\quad b=-\frac1{n(1-\rho)(n-1)},\]
-        \[Q=\frac{\sum_i(X_i-\bar X)^2}{(1-\rho)(n-1)}.\]</div>
-      </div></details>
-      <details><summary>Ejercicio 1b.5 — Estimador por diferencias sucesivas</summary><div class="inside">
-        <p><b>Enunciado.</b> $X_1,\ldots,X_n$ muestra independiente de $N(\mu,\sigma^2)$,</p>
-        <div class="formula">\[S^2=\frac1{n-1}\sum_{i=1}^n(X_i-\bar X)^2,\quad Q=\frac1{2(n-1)}\sum_{i=1}^{n-1}(X_{i+1}-X_i)^2.\]</div>
-        <div class="step"><b>(a)</b> Como $(n-1)S^2/\sigma^2\sim\chi^2_{n-1}$,
-          \[Var(S^2)=\frac{2\sigma^4}{n-1}.\]</div>
-        <div class="step"><b>(b)</b> Si $D_i=X_{i+1}-X_i$, entonces $D_i\sim N(0,2\sigma^2)$, luego $E[D_i^2]=2\sigma^2$ y $E[Q]=\sigma^2$.</div>
-        <div class="step"><b>(c)</b> Para $D=(D_1,\ldots,D_{n-1})'$, $\Sigma_D=\sigma^2T$, con $T$ tridiagonal, y $tr(T^2)=6n-8$.</div>
-        <div class="result"><b>Resultado:</b> \[Var(Q)=\frac{(3n-4)\sigma^4}{(n-1)^2},\qquad \lim_{n\to\infty}\frac{Var(S^2)}{Var(Q)}=\frac23.\]</div>
-      </div></details>
-    </section>
-
-    <section class="card" id="c"><h3>3. Exercises 1c</h3>
-      <details open><summary>Ejercicio 1c.1 — Covarianza cero no implica independencia</summary><div class="inside">
-        <div class="step">Por bilinealidad,
-          \[cov(X+Y,X-Y)=cov(X,X)-cov(X,Y)+cov(Y,X)-cov(Y,Y)=Var(X)-Var(Y).\]</div>
-        <div class="result">Si $Var(X)=Var(Y)$, entonces $cov(X+Y,X-Y)=0$.</div>
-        <div class="step warn"><b>Contraejemplo.</b> Sea $X\sim N(0,1)$ y $Y=X^2$. Entonces $Y$ depende totalmente de $X$, pero
-          \[cov(X,X^2)=E[X^3]-E[X]E[X^2]=0.\]</div>
-      </div></details>
-      <details><summary>Ejercicio 1c.2 — Caso Bernoulli: covarianza cero sí equivale a independencia</summary><div class="inside">
-        <p>Si $X,Y\in\{0,1\}$, entonces $E[XY]=P(X=1,Y=1)=p_{11}$.</p>
-        <div class="formula">\[cov(X,Y)=p_{11}-P(X=1)P(Y=1).\]</div>
-        <div class="step">Si $cov(X,Y)=0$, entonces $p_{11}=p_{1\cdot}p_{\cdot1}$. Las otras probabilidades conjuntas se obtienen por complemento y también factorizan.</div>
-        <div class="result"><b>Resultado:</b> para variables 0/1, $cov(X,Y)=0$ si y solo si $X$ e $Y$ son independientes.</div>
-      </div></details>
-      <details><summary>Ejercicio 1c.3 — Simetría y $cov(X,X^2)$</summary><div class="inside">
-        <div class="formula">\[cov(X,X^2)=E[X^3]-E[X]E[X^2].\]</div>
-        <div class="step">Como $E[X]=0$, queda $cov(X,X^2)=E[X^3]$.</div>
-        <div class="step">Si la densidad es simétrica respecto de cero, $x^3f(x)$ es impar, por tanto $E[X^3]=0$.</div>
-        <div class="result"><b>Resultado:</b> \[cov(X,X^2)=0.\]</div>
-      </div></details>
-      <details><summary>Ejercicio 1c.4 — Independencia por pares, pero no mutua</summary><div class="inside">
-        <p><b>Enunciado.</b> $f(x,y,z)=\frac18(1+xyz)$ para $-1\le x,y,z\le1$.</p>
-        <div class="step">Marginal de $X,Y$:
-          \[f_{X,Y}(x,y)=\int_{-1}^{1}\frac18(1+xyz)dz=\frac14.\]</div>
-        <div class="step">Además $f_X(x)=f_Y(y)=1/2$, luego $f_{X,Y}(x,y)=f_X(x)f_Y(y)$. Por simetría, todas las parejas son independientes.</div>
-        <div class="step warn">Pero la independencia mutua exigiría $f(x,y,z)=f_Xf_Yf_Z=1/8$, y en realidad $f(x,y,z)=\frac18(1+xyz)$.</div>
-        <div class="result"><b>Resultado:</b> son independientes por pares, pero no mutuamente independientes.</div>
-      </div></details>
-    </section>
-
-    <section class="card" id="m"><h3>4. Miscellaneous Exercises 1</h3>
-      <details open><summary>Misceláneo 1.1 — Ley de varianza total</summary><div class="inside">
-        <p><b>Enunciado.</b> Probar que</p><div class="formula">\[Var[X]=E_Y\{Var[X\mid Y]\}+Var_Y\{E[X\mid Y]\}.\]</div>
-        <div class="step">Sea $m(Y)=E[X\mid Y]$. Entonces
-          \[X-E[X]=\{X-m(Y)\}+\{m(Y)-E[X]\}.\]</div>
-        <div class="step">Al elevar al cuadrado y tomar esperanza, el término cruzado se anula al condicionar en $Y$.</div>
-        <div class="result"><b>Resultado:</b> \[Var[X]=E_Y\{Var[X\mid Y]\}+Var_Y\{E[X\mid Y]\}.\]</div>
-        <div class="step warn">La versión vectorial es igual en forma, pero $Var[X]$ y $Var[X\mid Y]$ son matrices.</div>
-      </div></details>
-      <details><summary>Misceláneo 1.2 — Transformaciones lineales de una matriz de varianza</summary><div class="inside">
-        <p>$X=(X_1,X_2,X_3)'$ con</p><div class="formula">\[Var[X]=\begin{pmatrix}5&2&3\\2&3&0\\3&0&3\end{pmatrix}.\]</div>
-        <div class="step"><b>(a)</b> Para $X_1-2X_2+X_3=c'X$, con $c=(1,-2,1)'$, se usa $Var(c'X)=c'\Sigma c$.</div>
-        <div class="result">\[Var(X_1-2X_2+X_3)=18.\]</div>
-        <div class="step"><b>(b)</b> Si $Y_1=X_1+X_2$ y $Y_2=X_1+X_2+X_3$, entonces $Y=AX$ con
-          \[A=\begin{pmatrix}1&1&0\\1&1&1\end{pmatrix}.\]</div>
-        <div class="result">\[Var[Y]=A\Sigma A'=\begin{pmatrix}12&15\\15&21\end{pmatrix}.\]</div>
-      </div></details>
-      <details><summary>Misceláneo 1.3 — Combinación $3Q_1-Q_2$</summary><div class="inside">
-        <p>Defina $Q_1=\sum_i(X_i-\bar X)^2$ y $Q_2=\sum_{i=1}^{n-1}(X_i-X_{i+1})^2+(X_n-X_1)^2$.</p>
-        <div class="step">Sean $S=\sum_i Var(X_i)$ y $C=\sum_{i=1}^{n-1}Cov(X_i,X_{i+1})$. Bajo el supuesto de no covarianza entre no vecinos,
-          \[Var(\bar X)=\frac{S+2C}{n^2}.\]</div>
-        <div class="step">Se obtiene
-          \[E[Q_1]=\frac{(n-1)S-2C}{n},\qquad E[Q_2]=2S-2C.\]</div>
-        <div class="result"><b>Resultado:</b> \[E\left[\frac{3Q_1-Q_2}{n(n-3)}\right]=Var(\bar X).\]</div>
-      </div></details>
-      <details><summary>Misceláneo 1.4 — Varianza de suma de diferencias cuadradas</summary><div class="inside">
-        <p>$X_1,X_2,X_3$ muestra de $U(-1,1)$. Para $X\sim U(-1,1)$, $E[X]=0$, $\mu_2=1/3$, $\mu_4=1/5$.</p>
-        <div class="step">La expresión
-          \[R=(X_1-X_2)^2+(X_2-X_3)^2+(X_3-X_1)^2\]
-          se escribe como $R=X'AX$, donde
-          \[A=\begin{pmatrix}2&-1&-1\\-1&2&-1\\-1&-1&2\end{pmatrix}.\]</div>
-        <div class="step">Usando la fórmula de varianza de formas cuadráticas,
-          \[Var(X'AX)=(\mu_4-3\mu_2^2)a'a+2\mu_2^2tr(A^2).\]</div>
-        <div class="result"><b>Resultado:</b> \[Var(R)=\frac{12}{5}.\]</div>
-      </div></details>
-      <details><summary>Misceláneo 1.5 — Covarianza de formas cuadráticas normales</summary><div class="inside">
-        <p>Si $X_i\stackrel{iid}{\sim}N(0,\sigma^2)$ y $A,B$ son simétricas, probar:</p>
-        <div class="formula">\[Cov[X'AX,X'BX]=2\sigma^4tr(AB).\]</div>
-        <div class="step">Sean $Q_A=X'AX$ y $Q_B=X'BX$. Entonces
-          \[E[Q_A]=\sigma^2tr(A),\qquad E[Q_B]=\sigma^2tr(B).\]</div>
-        <div class="step">Usando la fórmula de Isserlis para normales centradas:
-          \[E[X_iX_jX_kX_l]=\sigma^4(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk}).\]</div>
-        <div class="step">Entonces
-          \[E[Q_AQ_B]=\sigma^4tr(A)tr(B)+2\sigma^4tr(AB).\]</div>
-        <div class="result"><b>Resultado:</b> al restar $E[Q_A]E[Q_B]$, queda
-          \[Cov[X'AX,X'BX]=2\sigma^4tr(AB).\]</div>
-      </div></details>
-    </section>
-
-    <section class="card" id="resumen"><h3>Resumen final de resultados</h3>
-      <div class="grid">
-        <div><span class="tag">1a.1</span> Descomposición $X-a=(X-\mu)+(\mu-a)$.</div>
-        <div><span class="tag">1a.2</span> Restar constantes no cambia la covarianza.</div>
-        <div><span class="tag">1a.3</span> Matriz típica $(\min(i,j))$.</div>
-        <div><span class="tag">1b.3</span> Pesos óptimos inversamente proporcionales a la varianza.</div>
-        <div><span class="tag">1b.5</span> $Q$ es insesgado, pero menos eficiente que $S^2$.</div>
-        <div><span class="tag">1c</span> Covarianza cero no siempre significa independencia.</div>
-      </div>
-    </section>
-    <p class="footer">Contenido convertido desde el solucionario del Capítulo 1. No se subieron PDFs al repositorio.</p>
+  <main class="card">
+    <div class="logo">Σ</div>
+    <span class="pill">PDF externo en Google Drive</span>
+    <h1>Ejercicios resueltos del Capítulo 1</h1>
+    <p>Para no ocupar memoria en GitHub, esta sección solo deja un botón directo al documento PDF guardado en tu Google Drive.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://drive.google.com/file/d/1QsWneVkb0fPSYrfA4uIIC9YvRZcwS7AX/view?usp=drivesdk" target="_blank" rel="noopener">📄 Abrir PDF en Drive</a>
+      <a class="btn secondary" href="./">← Volver a la app</a>
+    </div>
+    <p class="note">Si no abre para otras personas, en Google Drive pon el archivo como “Cualquier persona con el enlace puede ver”.</p>
   </main>
-  <a class="btn backTop" href="#top" onclick="scrollTo({top:0,behavior:'smooth'});return false;">↑</a>
+  <script>
+    if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+  </script>
 </body>
 </html>
