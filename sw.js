@@ -1,7 +1,8 @@
-const CACHE_NAME = 'seber-regresion-app-v1';
+const CACHE_NAME = 'seber-regresion-app-v2';
 const ASSETS = [
   './',
   './index.html',
+  './ejercicios.html',
   './manifest.webmanifest',
   './icons/icon.svg'
 ];
